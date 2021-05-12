@@ -23,7 +23,7 @@ router.get('/:code', async (req, res) => {
 // @route     GET /
 // @desc      Render base URL
 router.get('/', async (req, res) => {
-    res.render('index', { shortUrl: '' });
+    res.render('index', { shortUrl: '', msg: '' });
 });
 
 module.exports = router;

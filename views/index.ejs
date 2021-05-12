@@ -21,8 +21,9 @@
     </div>
     <% if(shortUrl!="") { %>
         <div class="alert alert-success" role="alert">
-            <a href="<%= shortUrl %>"><%= shortUrl %>
-          </div>
+          <% if(msg!="") { %><pre class="text-success"><b><%= msg %></b></pre><% } %>
+          <a href="<%= shortUrl %>"><%= shortUrl %>
+        </div>
     <% } %>
   </div>
 </body>

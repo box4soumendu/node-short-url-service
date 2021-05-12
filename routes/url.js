@@ -28,7 +28,10 @@ router.post('/shorten', async (req, res) => {
 
             if (url) {
                 //res.json(url);
-                res.render('index', { shortUrl: url.shortUrl });
+                res.render('index', {
+                    shortUrl: url.shortUrl,
+                    msg: 'Url already exists!',
+                });
             } else {
                 const shortUrl = baseUrl + '/' + urlCode;
 
@@ -41,7 +44,10 @@ router.post('/shorten', async (req, res) => {
 
                 await url.save();
                 //res.json(url);
-                res.render('index', { shortUrl: url.shortUrl });
+                res.render('index', {
+                    shortUrl: url.shortUrl,
+                    msg: '',
+                });
             }
         } catch (err) {
             console.error(err);
